@@ -3,6 +3,8 @@ import { Stack } from "@mui/material";
 import { categories } from "./utils/constants";
 
 const Sidebar = () => {
+  const selectedCategory = "New";
+
   return (
     <Stack
       sx={{
@@ -12,7 +14,12 @@ const Sidebar = () => {
       }}
     >
       {categories.map((element) => (
-        <button>
+        <button
+          className="category-btn"
+          style={{
+            background: element.name === selectedCategory ? "#FC1503" : "",
+          }}
+        >
           <span>{element.icon}</span>
           <span>{element.name}</span>
         </button>
